@@ -34,7 +34,7 @@ void Automata::coin(int money) {
 }
 void Automata::choice(std::string drink) {
   if (state == ACCEPT) {
-    if (find(menu.begin(), menu.end(), drink) != menu.end()) {
+    if (find(menu.begin(), menu.end(), drink) == menu.end()) {
       std::cout << "Unable to make this drink";
       cancel();
     } else {
