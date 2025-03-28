@@ -78,9 +78,10 @@ void Automata::cook() {
   std::cout << "Started preparing. Pls, wait\n";
   auto start = std::chrono::steady_clock::now();
   auto duration = std::chrono::seconds(5);
+  auto printing_state = std::chrono::seconds(2);
   state = COOK;
   while (std::chrono::steady_clock::now() - start < duration) {
-    getState();
+    if (std::chrono::steady_clock::now() - start == printing_state) getState();
   }
   std::cout << "Drink prepapred!\n";
   finish();
