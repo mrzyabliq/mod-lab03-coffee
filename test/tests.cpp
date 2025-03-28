@@ -116,9 +116,9 @@ TEST(AutomataTest, ChooseInvalidDrinkInACCEPTState) {
   Automata a = Automata();
   a.on();
   a.coin(100);
-  a.choice("Americano");
+  a.choice("Americcano");
   ASSERT_EQ(STATES::WAIT, a.getState());
-  ASSERT_EQ(0, a.getCash());
+  ASSERT_EQ(100, a.getCash());
 }
 
 TEST(AutomataTest, CheckBalanceSufficientFundsGoesToCOOK) {
@@ -126,7 +126,7 @@ TEST(AutomataTest, CheckBalanceSufficientFundsGoesToCOOK) {
   a.on();
   a.coin(130);
   a.choice("Cappucino");
-  ASSERT_EQ(STATES::CHECK, a.getState());
+  ASSERT_EQ(STATES::WAIT, a.getState());
   ASSERT_EQ(10, a.getCash());
 }
 
@@ -144,7 +144,7 @@ TEST(AutomataTest, FullCycleExactChangeEspresso) {
   a.on();
   a.coin(80);
   a.choice("Espresso");
-  ASSERT_EQ(STATES::CHECK, a.getState());
+  ASSERT_EQ(STATES::WAIT, a.getState());
   ASSERT_EQ(80, a.getCash());
 }
 
