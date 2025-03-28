@@ -1,4 +1,9 @@
+// Copyright 2022 UNN-IASR
 #include "Automata.h"
+
+#include <iostream>
+#include <string>
+
 void Automata::on() {
   if (state == OFF) {
     state = WAIT;
@@ -31,6 +36,7 @@ void Automata::choice(std::string drink) {
   if (state == ACCEPT) {
     if (find(menu.begin(), menu.end(), drink) != menu.end()) {
       std::cout << "Unable to make this drink";
+      cancel();
     } else {
       state = CHECK;
       getState();

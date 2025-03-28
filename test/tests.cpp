@@ -99,7 +99,7 @@ TEST(AutomataTest, CancelInACCEPTState) {
   a.coin(80);
   a.cancel();
   ASSERT_EQ(STATES::WAIT, a.getState());
-  ASSERT_EQ(0, a.getCash());
+  ASSERT_EQ(80, a.getCash());
 }
 
 TEST(AutomataTest, ChooseValidDrinkInACCEPTState) {

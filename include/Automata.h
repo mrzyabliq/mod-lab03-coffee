@@ -1,9 +1,10 @@
+// Copyright 2022 UNN-IASR
+#ifndef INCLUDE_AUTOMATA_H_
 #include <algorithm>
 #include <chrono>
 #include <iostream>
 #include <string>
 #include <vector>
-
 
 enum STATES { OFF, WAIT, ACCEPT, CHECK, COOK };
 
@@ -34,3 +35,4 @@ class Automata {
   void cook();
   void finish();
 };
+#endif  // INCLUDE_AUTOMATA_H_
